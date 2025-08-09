@@ -1,0 +1,55 @@
+Kiemelt összefoglaló generálás AI-optimalizált szabályai
+
+A generálás minden lépése előtt a rendszer köteles a vonatkozó szabályokat teljes terjedelemben figyelembe venni, magában (belső workflow-ban) végigellenőrizni, és csak aztán elkészíteni a végső outputot.
+
+Felhasználó számára kizárólag a végleges, szabályos output jelenhet meg – minden egyéb magyarázat, szabályismétlés, példaszöveg, status vagy háttér-információ TILOS!
+
+- Általános, mindenre ráhúzható, sablonos, semmitmondó, "kiváló", "ideális", "praktikus", "kényelmes", "biztonságos", "tökéletes", "felhasználóbarát" és hasonló szófordulatokat TILOS használni, ezek előfordulása esetén a teljes szakaszt újra kell generálni.
+- A marketing, promóciós, ajánló, vagy érzelmi hatású kifejezések teljesen tilosak. Csak szakmai, műszaki, döntéstámogató nyelvezet megengedett.
+
+1. Alapvető cél
+A kiemelt összefoglaló rövid, döntéstámogató formában emelje ki a termék 3–5 legfontosabb funkcióját, kulcstulajdonságát, amelyek segítik a vásárlókat a gyors megértésben és választásban.
+
+2. Hossz és formátum
+- A kiemelt összefoglaló HTML-formátumban készüljön, kizárólag az alábbi szerkezetben:
+  ```html
+  <ul>
+    <li><p><strong>[Kulcstulajdonság címe]</strong> [Rövid, közérthető kifejtés]</p></li>
+    <!-- További 2–4 elem hasonló szerkezetben -->
+  </ul>
+  ```
+- Minimum 3, maximum 5 listaelem legyen
+- Minden listaelem tömör, egyedi információt tartalmazzon, ismétlés nélkül
+
+3. Tartalom és kiválasztás
+- Csak forrásalapú, hiteles kulcstulajdonságokat emelj ki
+- Kerüld az általános, marketing vagy promóciós kifejezéseket
+- Használható a terméknévben, meta title-ben és meta description-ben már használt kulcstulajdonságokkal, de szó szerinti ismétlés nem elfogadható
+- A kiemelt tulajdonságok legyenek relevánsak a felhasználói döntéshozatal szempontjából
+
+4. Stílus és nyelvhasználat
+- Egyszerű, közérthető, szakmai nyelvezet
+- Kerüld a körülményes vagy túlmagyarázó megfogalmazást
+- Dagályosság = Hiba
+- Használj érthető kifejezéseket, amelyek az AI és keresőmotorok számára is egyértelműek
+
+5. Tiltott elemek
+- Promóciós, marketing, eladást ösztönző vagy általános jelzők (pl. "kiváló", "professzionális")
+- Ismétlés szó szerint vagy jelentésben a többi szövegrész tartalmával
+- Felesleges részletek vagy túlbonyolított magyarázatok
+- HTML tageken kívüli formázás vagy speciális karakterek
+
+6. Példák
+```html
+<ul>
+  <li><p><strong>Gépi meghajtású kivitel</strong> Ipari szereléshez, 3/4" négyszög csatlakozással</p></li>
+  <li><p><strong>Hosszú kialakítás</strong> 90 mm-es dugókulcsok a nehezen hozzáférhető kötőelemekhez</p></li>
+  <li><p><strong>Erős króm-molibdén acél</strong> (CrMo, SCM-440) nagy terheléshez, tartós használathoz</p></li>
+</ul>
+```
+
+7. Formátum
+- A generált szöveg kizárólag a megadott HTML struktúrát tartalmazza, más tagolás vagy formázás nélkül
+- Minden elem `<li><p><strong>...</strong> ...</p></li>` formátumú legyen
+
+Ezek betartásával a kiemelt összefoglaló hatékonyan támogatja a vásárlói döntést.

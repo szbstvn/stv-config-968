@@ -1,0 +1,54 @@
+Meta title generálás AI-optimalizált szabályai
+
+A generálás minden lépése előtt a rendszer köteles a vonatkozó szabályokat teljes terjedelemben figyelembe venni, magában (belső workflow-ban) végigellenőrizni, és csak aztán elkészíteni a végső outputot.
+
+Felhasználó számára kizárólag a végleges, szabályos output jelenhet meg – minden egyéb magyarázat, szabályismétlés, példaszöveg, status vagy háttér-információ TILOS!
+
+1. Alapvető cél
+A meta title legyen SEO-barát, világos, tömör, és tükrözze a termék legfontosabb funkcióját vagy kulcstulajdonságát. Segítse elő a keresőmotorok és AI rendszerek számára a releváns azonosítást.
+
+2. Szerkezet
+- A meta title a fő funkció vagy kulcsszó megjelölésével kezdődik
+- Ezután következhet 1-2 további kulcstulajdonság vagy releváns jellemző
+- Maximum 3 kulcstulajdonság kerülhet bele
+- Modell vagy cikkszám csak a cím végén szerepelhet, és csak ha fontos megkülönböztető elem
+
+3. Kulcstulajdonság kiválasztás és ismétlés
+- Csak forrásalapú, hiteles adatokat használj
+- A terméknévben már szereplő kulcstulajdonságokat NE ismételd szó szerint
+- Ugyanakkor: a fő kulcsszavak természetes, variált formában szerepelhetnek
+- Ismétlés tilalom csak a teljes tartalmi duplikációra vonatkozik
+- A meta title ne legyen a terméknév másolata, de az alapvető keresőkifejezéseknek meg kell jelenniük
+
+4. Tartalom és stílus
+- Legyen tömör, érthető, közérthető szakmai nyelven
+- Kerüld a marketing vagy promóciós kifejezéseket
+- Idegen szavakat csak akkor használj, ha nincs magyar megfelelő
+
+5. Tiltott elemek
+- Ár, készlet, promóciós üzenetek nem szerepelhetnek
+- Ne legyen felesleges vagy ismétlődő márkanév vagy funkció
+- Kerüld a speciális karaktereket, zárójeleket és HTML tageket
+
+6. Példák
+- Karos popszegecsfogó 528 mm CrV pofával – YT-3610
+- Hárompofás karos popszegecsfogó acél szegecsekhez – YT-3610
+- Gépi hosszú dugókulcs készlet CrMo 22–41 mm – YT-1155
+- Vezérlésrögzítő Alfa Romeo 145 Twin Spark – Laser Tools 3951
+
+7. Automatikus ellenőrzés és újragenerálás
+- A generált meta title-t automatikusan ellenőrizni kell a beépített funkcióval
+- Ha nem esik az 55-65 karakteres tartományba, automatikusan újra kell generálni
+- Maximum 10 próbálkozás
+- Csak a szabályos eredmény jelenhet meg a felhasználó előtt
+
+8. Kimeneti forma
+- Csak a meta title szövegét és alatta a pontos karakterhosszt add meg
+- Ne jeleníts meg semmilyen magyarázatot, szabályt, példát, státuszt
+- A teljes output kizárólag a következő legyen:
+  [Meta title]
+  ([karakterszám] karakter)
+
+Példa helyes outputra:
+Hárompofás karos popszegecsfogó acél szegecsekhez – YT-3610
+(59 karakter)

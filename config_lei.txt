@@ -1,0 +1,119 @@
+Termékleírás HTML szakaszok AI-optimalizált szabályai
+
+Generálás előtt töltsd be a DEKLARÁCIO-t, annak teljes tartalmából dolgozz.
+
+Kötelező fókusz-elosztási munkafolyamat:
+Az alábbi lépések minden, a DEKLARÁCIÓ blokkra épülő termékleírás-generálásnál kötelezőek:
+- A DEKLARÁCIÓ blokk elkészítése után kötelező az ÖSSZES ott szereplő kulcstulajdonságot, szakmai fogalmat és technikai adatot előzetesen szétosztani a termékleírás további szakaszai között
+- Minden kulcstulajdonság és fogalom csak egyetlen szakaszban jelenhet meg, ott viszont részletesen, tematikusan, a szakasz fókuszának megfelelően kell kifejteni
+- Csak a szakasznak szabályainak megfelelő kulcstulajdonság helyezhető el az adott szakaszban
+- Tilos ugyanazt a műszaki információt vagy fogalmat más szakaszban akár átfogalmazva is újra leírni
+- A kimeneti felosztást vesd össze a szakaszok előállítási szabályaival
+- Ha marad olyan kulcstulajdonság vagy szakmai fogalom, amely nem került bemutatásra, azt a következő elérhető szakaszban kell feldolgozni
+
+Általános előírások az összes szakaszra:
+- A teljes termékleírás HTML formátumban készül
+- A kimenet egy HTML mely tartalmaz minden szakaszt
+- Az egyes szakaszokat külön HTML címkék jelölik (pl. `<h2>` cím, `<ul>`, `<p>`)
+- Minden szakasz tartalma forrásalapú, szakmai, és az ismétlésmentesség szabályai szerint készül
+- Kulcstulajdonságok, előnyök és adatok csak egyszer jelenhetnek meg, különböző megfogalmazásban és fókuszban
+- Az összefoglaló, jellemzők, előnyök, általános információ stb. szakaszokban a fogalommagyarázatot mindig a termékhez, felhasználáshoz kapcsolva, természetes mondatba ágyazva kell alkalmazni
+- Minden szövegszakaszban csak olyan mondat jelenhet meg, amely egy konkrét döntési helyzethez, felhasználói szituációhoz, műszaki kérdéshez vagy gyakorlati alkalmazáshoz ad választ, magyarázatot vagy leírást
+- Tiltott a marketing, promóciós vagy általánosító szóhasználat
+
+Szakmai, döntéstámogató mondatszűrés kötelező
+- Minden egyes mondat csak akkor jelenhet meg, ha egyértelműen egy konkrét döntési helyzethez, szerelési problémához, alkalmazási szituációhoz vagy műszaki választáshoz ad segítséget
+- Általános, mindenre ráhúzható, sablonos, semmitmondó, "kiváló", "ideális", "praktikus", "kényelmes", "biztonságos", "tökéletes", "felhasználóbarát" és hasonló szófordulatokat TILOS használni
+- A marketing, promóciós, ajánló, vagy érzelmi hatású kifejezések teljesen tilosak
+- Minden szakasz után automatikusan, mondatonként vizsgáld, hogy megfelel-e a fenti szakmai és döntési helyzet szűrésnek
+
+---
+
+1. Összefoglaló (`<p>`)
+- Tartalmazza a legfontosabb kulcstulajdonságot és legalább egy hosszabb (long-tail) kulcsszót
+- Második mondat szó szerint idézi a DEKLARÁCIÓ funkciómondatát
+- Harmadik mondat döntéstámogató, új információt tartalmaz, nem ismétlődhet
+- Nincs általánosítás vagy marketing
+- A végleges kimenetben a 'Második mondat' kifejezés és a forrásmegjelölés NEM szerepelhet, csak a tartalom!
+
+---
+
+2. Előnyök (`<h2>Előnyök</h2><ul><li>`)
+- Minimum 3, maximum 5 tétel
+- Felhasználási, üzemeltetési, alkalmazási, döntéstámogató fókuszú előnyöket lehet kiemelni
+- Csak keresői relevanciával bíró, döntéstámogató kulcstulajdonságok lehetnek
+- Nem ismételhet más szakaszokat szó szerint vagy szemantikailag
+
+---
+
+3. Jellemzők (`<h2>Jellemzők</h2><ul><li>`)
+- Fizikai, kezelési, felépítési, működtetési szempontokat emel ki
+- Csak funkcionális, laikus számára is érthető technikai jellemzők
+- Mértékegység nélküli adatok tartoznak ide
+- Nincs átfedés a Műszaki adatokkal
+
+---
+
+4. Készlet tartalma (készlet/szett típusú termékek esetén)
+- Ha a termék készlet, szett, garnitúra vagy több különböző elemből álló összeállítás, akkor kötelező egy önálló "Készlet tartalma" szakaszt beszúrni
+- A "Készlet tartalma" szakasz mindig a "Jellemzők" szakasz után és a "Műszaki adatok" szakasz előtt helyezkedik el
+- Ebben a szakaszban csak a főtermék maga és a készletben található elemek pontos felsorolása szerepelhet, felsorolásos `<ul><li>` listában
+- Tilos bármilyen előnyt, funkciót, marketing kifejezést vagy általánosító állítást megfogalmazni
+- A "készlet" szó máshol önálló kulcstulajdonságként vagy előnyként nem jelenhet meg
+
+---
+
+5. Műszaki adatok (`<h2>Műszaki adatok</h2><table>`)
+- Csak objektív, mértékegységgel rendelkező paraméterek
+- Minden adat pontosan egy helyen szerepel
+- Kötelező feltüntetni cikkszámot és EAN-t, ha elérhető
+- Formátum: táblázat, soronként `<tr><td>Tulajdonság</td><td>Érték</td></tr>`
+
+---
+
+6. Ajánlott felhasználás (`<h2>Ajánlott felhasználás</h2><ul><li>`)
+- 3-6 egyedi, konkrét, felhasználói döntést segítő listaelem
+- Kerüld az általánosításokat, marketinget, ismétlést
+- Legalább két elem tartalmazzon long-tail kulcsszót
+
+---
+
+7. Használat, tippek (`<h2>Használat, tippek</h2><ul><li>`)
+- 4-8 egyedi, gyakorlati, termékspecifikus tanács
+- Tilos általános, minden termékre vonatkozó vagy marketing jellegű pontokat írni
+- Legalább egy pont speciális felhasználói problémára, hibalehetőségre adjon választ
+
+---
+
+8. GYIK (`<h2>Gyakori kérdések és válaszok</h2><ul><li><strong>Kérdés</strong> Válasz</li></ul>`)
+- Minimum 3, maximum 6 kérdés-válasz pár
+- Csak valós döntési helyzetre, szerelési/választási dilemmára, konkrét hibalehetőségre vagy felhasználói problémára adható válasz
+- Tilos minden általános, magától értetődő vagy bármely termékre alkalmazható kérdés és válasz
+- Legalább egy kérdés-válasz pár foglalkozzon konkrét hibalehetőséggel, veszéllyel vagy tévesztéssel
+- Legalább egy kérdés-válasz tartalmazzon long-tail kulcsszót
+- A kérdés félkövér (`<strong>`) formátumban, a válasz közvetlenül utána jelenjen meg
+
+---
+
+9. CTA mondat (`<p>`)
+- A teljes termékleírás végén helyezkedik el, nem címsor
+- Maximum 3 mondat
+- Tartalmazzon long-tail kulcsszavakat vagy szemantikai variánsokat
+- Tilos a promóciós, árra vagy rendelésre ösztönző kifejezés
+
+---
+
+10. Általános információk (`<h2>Általános információ a [terméktípus]ról</h2><p>`)
+- 3-4 mondatos, forrásalapú általános ismertető a terméktípus műszaki hátteréről
+- Nem tartalmaz konkrét termékadatot vagy marketinges szöveget
+- Gazdag szókészlet, szakmai kifejezések, long-tail keresőkifejezések használata ajánlott
+
+---
+
+11. Kiadás előtti ellenőrzés
+- Minden szakasz tartalma megfelel a moduláris ismétlésmentes generálási szabályoknak
+- Minden információt felhasználtál ami a DEKLARÁCIÓ-ban van
+- "Készlet tartalma" szakasz csak akkor ha a termék megfelel a készlet szabályainak
+- Az eredmény kimenete egy html, mely az összes felsorolt (1-10) szakaszt tartalmazza, mást nem
+- Ha nem felel meg, akkor automatikusan újra kell generálni, amíg nem felel meg minden feltételnek
+- Tiltott szófordulatok és kifejezések minden szakaszban: "kiváló", "ideális", "tökéletes", "praktikus", "felhasználóbarát", "biztonságos használat", "kényelmes munkavégzés", "széles körű felhasználás", "nagyszerű választás", "bármilyen műhelybe", "megkönnyíti a munkát", "minden igényt kielégít", "garantált eredmény", "elengedhetetlen kellék", "profi minőség", "egyedi megoldás", "megbízható társ", "gyors és egyszerű", "minden szituációban", "univerzális"

@@ -1,0 +1,65 @@
+Kapcsolódó PDF adatlap megadásának AI-optimalizált szabályai
+
+A generálás minden lépése előtt a rendszer köteles a vonatkozó szabályokat teljes terjedelemben figyelembe venni, magában (belső workflow-ban) végigellenőrizni, és csak aztán elkészíteni a végső outputot.
+
+Felhasználó számára kizárólag a végleges, szabályos output jelenhet meg – minden egyéb magyarázat, szabályismétlés, példaszöveg, status vagy háttér-információ TILOS!
+
+1. Alapvető cél  
+A PDF adatlap szakasz célja, hogy a felhasználók számára hiteles, részletes műszaki információkat tartalmazó, gyártói vagy hivatalos forrásból származó PDF dokumentum elérhetőségét biztosítsa.
+
+2. Tartalom és formátum  
+- Csak hivatalos gyártói, forgalmazói vagy más megbízható forrásból származó élő, elérhető PDF link adható meg
+- A link önmagában jelenjen meg, HTML tagek nélkül
+- A PDF kizárólag az adott termékre vagy termékcsaládra vonatkozó, műszaki adatokat, használati útmutatót vagy specifikációkat tartalmazza
+- Ha nincs elérhető, hiteles PDF adatlap, a szöveg legyen: "Nem áll rendelkezésre adat."
+
+3. Formai követelmények  
+- Csak élő, közvetlen PDF link megengedett (pl. https://www.gyarto.hu/termek/adatlap.pdf)
+- Több PDF esetén csak a legfrissebb, legteljesebb adatlap linkje szerepeljen
+- Semmilyen HTML, iframe vagy beágyazó kód nem megengedett
+
+4. Tiltott elemek  
+- Nem hiteles vagy forrás nélküli PDF link
+- Marketing vagy promóciós anyagok linkje nem megengedett
+- Zárt vagy nem publikus dokumentumok
+- Linkek nem vezethetnek más formátumú vagy oldalakra
+
+5. Példa  
+https://www.gyarto.hu/adatlapok/termek_1234.pdf  
+
+6. Hiányzó adat esetén  
+- Írd: "Nem áll rendelkezésre adat."
+
+7. Kötelező PDF keresés - KONKRÉT UTASÍTÁSOK
+
+MINDEN DEKLARÁCIÓ-generáláskor futtatandó keresések:
+1. web_search("[márka] [modell] PDF datasheet")
+2. web_search("[márka] [modell] manual PDF")
+3. web_search("[márka] [modell] kézikönyv letöltés")
+4. web_search("[márka] katalógus PDF [modell]")
+5. web_search("[márka] official documentation")
+
+CÉLZOTT WEBOLDAL KERESÉSEK:
+- web_search("site:[gyártó weboldal] [modell] PDF")
+- web_search("filetype:pdf [márka] [modell]")
+- web_search("filetype:pdf [márka] [modell] specifications")
+
+PÉLDA keresések:
+- web_search("YATO YT-1155 PDF datasheet")
+- web_search("filetype:pdf YATO YT-1155 specifications")
+- web_search("site:yato.eu YT-1155 PDF")
+
+EREDMÉNY VALIDÁLÁS:
+- web_fetch minden PDF link ellenőrzéséhez (elérhető-e)
+- Csak közvetlen PDF linkek (nem letöltő oldalak)
+- Gyártói/hivatalos forrás előnyben
+- Teljes műszaki adatlap szükséges (nem csak rövid spec)
+
+DOKUMENTÁLÁS:
+- A pontos PDF URL-t másold ki
+- Ha elérhető: https://gyarto.hu/docs/termek.pdf
+- Ha nincs: "Nem áll rendelkezésre adat"
+
+8. Kimeneti formátum
+- Csak a PDF link jelenjen meg, vagy "Nem áll rendelkezésre adat."
+- Semmi egyéb szöveg, magyarázat, leírás nem megengedett

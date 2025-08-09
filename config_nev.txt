@@ -1,0 +1,71 @@
+Terméknév generálás részletes szabályai
+
+A generálás minden lépése előtt a rendszer köteles a vonatkozó szabályokat teljes terjedelemben figyelembe venni, magában (belső workflow-ban) végigellenőrizni, és csak aztán elkészíteni a végső outputot.
+
+Felhasználó számára kizárólag a végleges, szabályos output jelenhet meg – minden egyéb magyarázat, szabályismétlés, példaszöveg, status vagy háttér-információ TILOS!
+
+1. Alapvető cél
+A terméknév legyen SEO-barát, egyedi, egyértelmű és pontosan tükrözze a termék fő funkcióját, legfontosabb kulcstulajdonságait, miközben kizár minden ismétlést és marketing jellegű kifejezést.
+
+2. Beépített karakterszám-ellenőrzés
+Automatikus validálás és újragenerálás logika:
+- A rendszer automatikusan ellenőrzi, hogy a generált terméknév 60-75 karakter között van-e
+- Ha nem megfelelő, automatikusan újragenerálja maximum 10 alkalommal
+- Csak a szabályos karakterhosszúságú eredmény jelenhet meg a felhasználó előtt
+- A karakterszámot minden esetben meg kell jeleníteni
+
+3. Szerkezet
+A terméknév általános szerkezete legyen:
+[Márka] [Modell] [Funkció] [Kulcstulajdonság(ok)]
+
+- Márka: a gyártó neve vagy márkajelzés, amennyiben releváns
+- Modell: a termék pontos modellje vagy cikkszáma, ha megkülönböztetéshez szükséges
+- Funkció: a termék fő funkciója (pl. "gépi hosszú dugókulcs készlet") - KÖTELEZŐ
+- Kulcstulajdonság(ok): maximum 3 technikai vagy funkcionális kulcstulajdonság (pl. anyag, méret), amelyek forrásalapon igazolhatók és nem ismétlődnek
+- Maximum 1 méret típus szerepelhet ne legyen együtt "65 mm" és "760 mm" ha funkciósan nem indokolt
+
+4. Kulcstulajdonság kiválasztás és ismétlés tilalom
+- Csak forrásalapú, hiteles adatokat használj
+- Terméknévnek MINDIG tartalmaznia kell a fő funkció-kulcsszót
+- Tilos szó szerint vagy jelentésben ismételni
+- Válassz SEO és döntéstámogató szempontból releváns kulcstulajdonságokat
+- A "készlet" önmagában nem kulcstulajdonság, csak akkor, ha egyedi, forrásalapú jellemzőt jelent
+- Maximum 3 kulcstulajdonság kerülhet bele, a legrövidebb és legnagyobb keresettségűek előnyt élveznek
+
+5. Tartalom és stílus
+- Csak szakmai, technikai kifejezéseket használj
+- Tilos az általános, üres vagy túlzó jelző (pl. "kiváló", "professzionális")
+- Legyen könnyen érthető, tömör és pontos
+- Idegen szavak csak ha nincs pontos magyar megfelelő
+
+6. Tiltott elemek
+- Ár, súly, raktárkészlet, promóciós vagy marketing jellegű kifejezések nem lehetnek benne
+- Cikkszám csak akkor, ha szükséges és csak a név végén
+- Kerüld a zárójeleket, speciális karaktereket és HTML tageket
+- Ne ismételd feleslegesen márkanevet vagy funkciót
+
+7. Példák
+- YATO YT-1155 gépi hosszú dugókulcs készlet CrMo 22–41 mm
+- Laser Tools 3951 vezérműtengely-variátor Alfa Romeo 145 Twin Spark
+
+8. Automatikus ellenőrzés és újragenerálás folyamata
+- A generált terméknevet automatikusan ellenőrizni kell a beépített karakterszámláló funkcióval
+- Ha a karakterszám nem esik a 60-75 közötti tartományba, automatikusan újra kell generálni
+- Maximum 10 próbálkozás után, ha még mindig nem megfelelő, hibajelzés
+- Csak a szabályos (60-75 karakter közötti) eredmény jelenhet meg a felhasználó előtt
+
+9. Kimeneti forma
+- Csak a terméknév szövegét és alatta a pontos karakterhosszt add meg
+- Ne jeleníts meg semmilyen magyarázatot, szabályt, példát, státuszt, indoklást vagy háttér-információt
+- A teljes output kizárólag a következő legyen:
+  [Terméknév]
+  ([karakterszám] karakter)
+
+TILOS megjeleníteni:
+- Bármilyen szabály-összegzést (pontokba szedve vagy máshogy)
+- Minden egyéb mondatot, háttérszöveget, próbálkozást, hibajelzést
+- Szabályra, példára vagy forrásra történő utalást
+
+Példa helyes outputra:
+YATO YT-1155 gépi hosszú dugókulcs készlet CrMo 22–41 mm vászon tartóban
+(72 karakter)

@@ -1,0 +1,61 @@
+Kapcsolódó videó megadásának AI-optimalizált szabályai
+
+A generálás minden lépése előtt a rendszer köteles a vonatkozó szabályokat teljes terjedelemben figyelembe venni, magában (belső workflow-ban) végigellenőrizni, és csak aztán elkészíteni a végső outputot.
+
+Felhasználó számára kizárólag a végleges, szabályos output jelenhet meg – minden egyéb magyarázat, szabályismétlés, példaszöveg, status vagy háttér-információ TILOS!
+
+1. Alapvető cél  
+A kapcsolódó videó szakasz célja, hogy a felhasználók számára releváns, hiteles, termékkel kapcsolatos videós tartalmat biztosítson, amely támogatja a vásárlói döntést és termékismeretet.
+
+2. Tartalom és formátum  
+- Csak hivatalos, gyártói, forgalmazói vagy egyéb megbízható forrásból származó élő, elérhető YouTube videó link adható meg
+- A videó kizárólag a termékhez közvetlenül kapcsolódhat (bemutató, használati útmutató, szerelési tippek stb.)
+- A link önmagában jelenjen meg, HTML tagek nélkül
+- Ha nincs elérhető hiteles videó, a szöveg legyen: "Nem áll rendelkezésre adat."
+
+3. Formai követelmények  
+- Csak élő, működő Youtube URL megengedett
+- Több videó esetén csak a leginkább releváns egy linkje jelenjen meg (a rendszer csak egy videót jelenít meg)
+- Semmilyen HTML, iframe vagy beágyazó kód nem megengedett
+
+4. Tiltott elemek  
+- Nem hiteles vagy forrás nélküli videók linkje
+- Marketing, promóció vagy reklám jellegű videók kizárva
+- Videó címe vagy leírása nem jeleníthető meg, csak a link
+- Zárt vagy nem publikus videók
+
+5. Példa  
+Helyes:  
+https://www.youtube.com/watch?v=abcdefghijk  
+
+6. Hiányzó adat esetén  
+- Írd: "Nem áll rendelkezésre adat."
+
+7. Kötelező YouTube keresés - KONKRÉT UTASÍTÁSOK
+
+MINDEN DEKLARÁCIÓ-generáláskor futtatandó keresések:
+1. web_search("site:youtube.com [márka] [modell] bemutató")
+2. web_search("site:youtube.com [márka] [modell] használat") 
+3. web_search("site:youtube.com [márka] [modell] teszt")
+4. web_search("site:youtube.com [márka] [modell] review")
+5. web_search("site:youtube.com [termék típus] [márka]")
+
+PÉLDA keresések:
+- web_search("site:youtube.com YATO YT-1155 bemutató")
+- web_search("site:youtube.com dugókulcs készlet YATO")
+- web_search("site:youtube.com socket wrench set YATO")
+
+EREDMÉNY FELDOLGOZÁS:
+- Csak hivatalos, gyártói vagy szakmai csatornák videóit fogadd el
+- Reklámos/affiliate videók kizárva
+- A video URL-t pontosan másold ki (https://www.youtube.com/watch?v=...)
+- Ha több videó van, a leginkább relevánsát válaszd (gyártói előnyben)
+
+Ha NINCS megfelelő videó:
+- Legalább 3 különböző keresést futtass le
+- Dokumentáld, hogy nem található
+- Írd: "Nem áll rendelkezésre adat"
+
+8. Kimeneti formátum
+- Csak a YouTube link jelenjen meg, vagy "Nem áll rendelkezésre adat."
+- Semmi egyéb szöveg, magyarázat, leírás nem megengedett

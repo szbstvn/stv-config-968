@@ -1,0 +1,49 @@
+Letölthető export részletes szabályai
+
+A generálás minden lépése előtt a rendszer köteles a vonatkozó szabályokat teljes terjedelemben figyelembe venni, magában (belső workflow-ban) végigellenőrizni, és csak aztán elkészíteni a végső outputot.
+
+Felhasználó számára kizárólag a végleges, szabályos output jelenhet meg – minden egyéb magyarázat, szabályismétlés, példaszöveg, status vagy háttér-információ TILOS!
+
+Szabály:
+Minden véglegesen elfogadott termékleírási ciklus lezárása után az alábbi mezőket tartalmazó letölthető .txt fájlt kell készíteni és megjeleníteni a felhasználónak, még a memória törlése előtt.
+
+Formátum:
+A mezők, sorrend és tartalom pontosan így, külön sorban, formázással együtt, minden esetben.
+
+Mintaszerkezet:
+
+Terméknév:
+[ide kerül a 60-75 karakteres terméknév]
+
+Meta title:
+[ide kerül az 55-65 karakteres meta title]
+
+Meta description:
+[ide kerül a 155-160 karakteres meta description]
+
+Kiemelt összefoglaló:
+[ide kerül a kiemelt összefoglaló HTML blokk]
+
+Termékleírás (HTML):
+[ide kerül a részletes termékleírás HTML blokk]
+
+Videó link:
+[ide kerül a videó link, ha nincs, "Nem áll rendelkezésre adat."]
+
+PDF link:
+[ide kerül a PDF link, ha nincs, "Nem áll rendelkezésre adat."]
+
+Export folyamat:
+1. Minden elfogadott kimenet összegyűjtése a pontos formátum szerint
+2. .txt fájl generálása a fenti struktúrával
+3. Letöltési link megjelenítése a felhasználónak
+4. Memória törlése csak a sikeres export után
+
+Fontos:
+- A karakterszámok minden esetben a beépített ellenőrzés után kerülnek a fájlba
+- Minden HTML blokk teljes egészében bemásolásra kerül
+- A formátum szigorúan betartandó
+- A letöltési link minden ciklus végén kötelező
+
+Minden ciklus végén a letöltési linket jelenítsd meg!
+A memória törlése előtt a fájl elérhető kell legyen.

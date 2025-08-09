@@ -1,0 +1,168 @@
+Teljes forrás- és adatkezelési szabályzat a DEKLARÁCIÓ blokk generálásához
+
+1. Általános elvek
+- A DEKLARÁCIÓ blokk a termékleírás alapját képezi, minden generálás első lépése
+- Tartalma kizárólag forrásalapú, ellenőrzött, hiteles adat lehet
+- Minden adat visszakereshető, ellenőrizhető forrásból származzon
+- Marketing, promóciós, becslésen alapuló tartalom TILOS
+
+2.0 Kötelező forrásellenőrzési és információfeltárási workflow
+
+2.0.1 Forrásalapú érvényesítés és aktív információfeltárás
+- A bemeneti adatok mellett aktívan kell további forrásokból releváns adatokat feltárni
+- A DEKLARÁCIÓ nem épülhet kizárólag bemeneti információkra
+- Kötelező minden elérhető, hiteles forrás felhasználása
+
+Megengedett információtípusok:
+- anyag, méret, kialakítás, kompatibilitás
+- csatlakozási forma, tartozék, alkalmazási terület
+- tanúsítvány, szerelési jellemzők
+
+2.0.2 Kötelező forrásvizsgálat - KONKRÉT KERESÉSI UTASÍTÁSOK
+
+LÉPÉS 1: Alapkutatás (minden termékhez kötelező)
+- web_search("[márka] [modell] műszaki adatok")
+- web_search("[márka] [modell] specifikáció") 
+- web_search("[márka] [modell] datasheet")
+- web_search("[termék típus] [márka] adatlap")
+
+LÉPÉS 2: Gyártói forrás keresése
+- web_search("[márka] official website")
+- web_search("[márka] gyártó hivatalos oldal")
+- web_fetch az összes gyártói URL-t a teljes adatlapért
+
+LÉPÉS 3: Webáruházak átvizsgálása (min. 3)
+- web_search("site:pumatools.hu [márka] [modell]")
+- web_search("site:phobextools.com [márka] [modell]") 
+- web_search("site:amazon.com [márka] [modell]")
+- web_search("site:conrad.hu [márka] [modell]")
+- web_fetch minden releváns termékoldalt
+
+LÉPÉS 4: Nemzetközi keresések
+- web_search("[brand] [model] technical specifications")
+- web_search("[brand] [model] Datenblatt")
+- web_search("[brand] [model] fiche technique")
+
+LÉPÉS 5: YouTube videó keresés (kötelező)
+- web_search("site:youtube.com [márka] [modell] bemutató")
+- web_search("site:youtube.com [márka] [modell] teszt")
+- web_search("site:youtube.com [márka] [modell] használat")
+- web_search("site:youtube.com [márka] [modell] review")
+
+LÉPÉS 6: PDF dokumentumok keresése
+- web_search("[márka] [modell] PDF kézikönyv")
+- web_search("[márka] [modell] manual download")
+- web_search("[márka] katalógus PDF [modell]")
+
+LÉPÉS 7: EAN/cikkszám alapú keresés (ha van)
+- web_search("[EAN kód]")
+- web_search("[cikkszám] [márka]")
+- web_search("[model number] datasheet")
+
+MINDEN KERESÉS UTÁN:
+- web_fetch minden releváns URL-t a teljes tartalom megszerzéséhez
+- Értékeld a forrás megbízhatóságát: gyártói > forgalmazói > egyéb
+- Gyűjtsd ki az összes műszaki adatot, méretet, anyagot, funkcót
+- Dokumentáld, melyik forrásból származik az adat
+
+KÖTELEZŐ MINIMÁLIS KERESÉSEK:
+- Legalább 5 web_search különböző kulcsszavakkal
+- Legalább 3 web_fetch releváns oldalak teljes tartalmáért  
+- 1 YouTube keresés videó keresésért
+- 1 PDF/dokumentum keresés
+
+2.0.3 Forrásalapú döntéshozatal
+- Csak dokumentált adat kerülhet a DEKLARÁCIÓBA
+- Több forrás esetén a legmegbízhatóbb (gyártói) forrás alapján dönteni
+- "Nem áll rendelkezésre adat" csak minden forrás vizsgálata után
+
+2.0.4 Tételes forrásmegjelölés kötelező
+Példa:
+- Anyag: Króm-vanádium acél (Forrás: gyártói PDF – 2022)
+- Hossz: 250 mm (Forrás: Amazon.de termékoldal)
+
+2.0.5 Adatellenőrzés és következtetés-tilalom
+- Az AI nem következtethet, nem becsülhet adatokat
+- Minden kijelentésnek visszakereshető, forrásalapú igazolása kell legyen
+- Különösen tilos: marketing-jellegű túlzás, általánosító sablonhasználat
+
+2.0.6 Háttérismereti források alkalmazása (kötelező minden esetben)
+Kötelező forrástípusok:
+- Szakmai szótár/lexikon VAGY Wikipedia szócikk
+- Oktatási anyag VAGY gyártói oktatóanyag
+- Opcionálisan: releváns gyártói YouTube-videó
+
+Használat:
+- Csak fogalommagyarázat, működési elv, alkalmazási kontextus
+- Max. 1-3 mondat/termék, döntéstámogató fókusz
+- TILOS műszaki paraméterek átvétele háttérforrásokból
+
+2.0.7 Fogalom- és működési elv ellenőrzési kötelezettség
+- Minden műszaki szakkifejezést forrásalapúan kell ellenőrizni
+- A fogalom magyarázatának tartalmaznia kell a pontos műszaki célt
+- Eltérő források esetén csak gyártói/szakszótári magyarázat alkalmazható
+
+3. Kulcstulajdonság-kiválasztás
+
+3.1 Kulcstulajdonság definíciója:
+- Technikai/funkcionális jellemző, döntéstámogató
+- Forrásalapú és releváns
+- Komplex adat (pl. 'gyűrűzött szár', 'D fejforma')
+- A termék anyaga mindig döntéstámogató kulcstulajdonság
+
+3.2 Kizárt elemek:
+- Marketing kifejezések, általánosítások
+- Becslések, feltételezések
+- Nem ellenőrzött információk
+
+3.3 Kiválasztási workflow:
+- Összegyűjtjük az összes rendelkezésre álló adatot
+- Szűrjük a nem releváns információkat
+- Rangsoroljuk SEO és döntéstámogató szempontból
+- A termék anyaga kötelező kulcstulajdonság
+
+3.4 Márkanév szerepeltetése:
+- Ha iparág-specifikusan ismert/prémium pozíciójú
+- Forrásalapúan visszaigazolható
+- Kötelező a kulcstulajdonságok között
+
+4. DEKLARÁCIÓ blokk szerkezete
+
+4.1 Funkciómondat:
+- Max. 1 mondat, tömör, szakmai, forrásalapú
+- Forrásmegjelöléssel ellátva
+
+4.2 Kulcstulajdonságok:
+- Pontokba szedve
+- Gyártói adatok, cikkszám, EAN, anyag, méretek
+- Ellenőrzött, forrásalapú adatok
+
+4.3 Idegen szavak magyarázata:
+- Minden szakkifejezés rövid magyar definícióval
+- Ha nincs: "Nem áll rendelkezésre adat"
+
+4.4 Hiányzó adat kezelése:
+- "Nem áll rendelkezésre adat" megjelölés kötelező
+
+5. Forma és technikai követelmények
+- Egyszerű szöveges formátum, pontokkal tagolva
+- Nincs HTML vagy speciális formázás
+- Egyértelműen tagolt szakaszok
+
+6. Példa
+
+Funkció: Ez a szerszám precíziós vezérműtengely-pozicionálást biztosít az Alfa Romeo 145 Twin Spark 1.4 motorhoz. (Forrás: gyártó hivatalos dokumentáció)
+
+Kulcstulajdonságok:  
+- Gyártó: Laser Tools (Sheffield, UK)  
+- Modell: 3951  
+- OEM referencia: 1 852 161 000  
+- EAN: 5018341039516  
+- Anyag: Króm-molibdén acél  
+- Felhasználás: Szerelési munkák szakszervizben, gyári előírás szerint  
+
+Idegen szavak:  
+- OEM: eredeti gyári referencia, az autógyártó által megadott alkatrészazonosító  
+- variátor: vezérműtengely-pozicionáló egység
+
+Hiányzó adat: Nem áll rendelkezésre adat
